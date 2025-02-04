@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "9058f57b-203a-4112-98aa-f08efa20cd19",
+		"name": "Trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14797274",
+		"_collection_link": "https://www.postman.com/liviaboni/livia-workspace/collection/gjb19le/trello?action=share&source=collection_link&creator=14797274"
+	},
+	"item": [
+		{
+			"name": "Access Trello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/1/members/me/boards?key={{trelloKey}}&token={{trelloToken}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"members",
+						"me",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/1/boards/?name=Learning API test&key=6f3142e875d47a42b4c6cfcd3b937238&token=5c2f366100da635f378b5e1cb9119174d54144ab387f3fd963d39602b078ba4a",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Learning API test"
+						},
+						{
+							"key": "key",
+							"value": "6f3142e875d47a42b4c6cfcd3b937238"
+						},
+						{
+							"key": "token",
+							"value": "5c2f366100da635f378b5e1cb9119174d54144ab387f3fd963d39602b078ba4a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{bseURL}}/1/boards/:id",
+					"host": [
+						"{{bseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "635bba771b4943037b2f9035"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "5c2f366100da635f378b5e1cb9119174d54144ab387f3fd963d39602b078ba4a",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.trello.com",
+			"type": "string"
+		},
+		{
+			"key": "trelloToken",
+			"value": "5c2f366100da635f378b5e1cb9119174d54144ab387f3fd963d39602b078ba4a",
+			"type": "string"
+		},
+		{
+			"key": "trelloKey",
+			"value": "6f3142e875d47a42b4c6cfcd3b937238",
+			"type": "string"
+		}
+	]
+}
